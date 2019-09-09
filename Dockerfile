@@ -7,7 +7,7 @@ FROM python:3.7
 COPY ./script /script
 WORKDIR /script
 
-RUN pip install -r elasticsearch
+RUN pip install elasticsearch
 
 ENTRYPOINT ["python"]
 
