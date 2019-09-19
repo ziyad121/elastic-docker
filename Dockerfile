@@ -1,8 +1,9 @@
 FROM docker.elastic.co/elasticsearch/elasticsearch:6.2.4
-RUN ./ install \ https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.2-windows-x86_64.zip
+RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install \ 
+-b es-learn-to-rank.labs.o19s.com/ltr-1.1.2-es7.3.1.zip
+
 
 FROM python:3.7
-
 COPY ./script /script
 
 RUN pip install elasticsearch
