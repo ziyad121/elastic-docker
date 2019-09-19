@@ -5,7 +5,6 @@ RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install \
 FROM python:3.7
 
 COPY ./script /script
-WORKDIR /script
 
 RUN pip install elasticsearch
 
