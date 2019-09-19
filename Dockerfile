@@ -7,6 +7,8 @@ FROM python:3.7
 COPY ./script /script
 
 RUN pip install elasticsearch
+RUN pip install wheel
+RUN pip install pandas
 
 ENTRYPOINT ["python"]
 
