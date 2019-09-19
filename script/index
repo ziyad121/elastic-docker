@@ -5,7 +5,7 @@ import pandas as pd
 
 
 #data directory
-os.chdir("C:/Users/meftahzd/Desktop/My_Stella project/data/sample")
+os.chdir("/data/")
 files =glob.glob("*.*")
 
 
