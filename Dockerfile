@@ -7,6 +7,8 @@ FROM python:3.7
 COPY ./script /script
 
 RUN pip install elasticsearch
+RUN pip install urllib3==1.24.1
+RUN pip install jsonschema==2.6.0
 RUN pip install wheel
 RUN pip install pandas
 
