@@ -1,6 +1,5 @@
 FROM docker.elastic.co/elasticsearch/elasticsearch:6.2.4
-RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install \ 
--b http://es-learn-to-rank.labs.o19s.com/ltr-1.1.0-es6.2.4.zip
+RUN ./ install \ https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.2-windows-x86_64.zip
 
 FROM python:3.7
 
