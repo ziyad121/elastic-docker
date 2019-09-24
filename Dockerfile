@@ -2,16 +2,16 @@ FROM debian:jessie
 
 COPY ./script /script
 
-
 RUN apt-get update && \
     apt-get install -y openjdk-7-jre wget
-RUN apt-get install python3-pip
+RUN apt-get install -y --no-install-recommends \
+    python3.5 \
+    python3-pip \
+    && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN pip install elasticsearch
-RUN pip install urllib3==1.24.1
-RUN pip install jsonschema==2.6.0
-RUN pip install wheel
-RUN pip install pandas
+RUN pip install elasticsearch urllib3==1.24.1 jsonschema==2.6.0 wheel pandas
 
 ENV JAVA_HOME /usr/lib/jvm/java-6-openjdk-amd64
 RUN (cd /tmp && \
