@@ -5,7 +5,7 @@ COPY ./script /script
 
 RUN apt-get update && \
     apt-get install -y openjdk-7-jre wget
-RUN apt install python3-pip
+RUN apt-get install python3-pip
 
 RUN pip install elasticsearch
 RUN pip install urllib3==1.24.1
