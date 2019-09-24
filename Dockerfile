@@ -7,7 +7,7 @@ ENV ES_PKG_NAME elasticsearch-1.5.0
 # Install Elasticsearch.
 RUN \
   cd / && \
-  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
+  wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.3.2-linux-x86_64.tar.gz && \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
