@@ -2,6 +2,7 @@ FROM debian:jessie
 
 COPY ./script /script
 
+RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get install python3.6
