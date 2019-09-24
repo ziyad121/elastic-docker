@@ -11,7 +11,7 @@ RUN apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install elasticsearch urllib3==1.24.1 jsonschema==2.6.0 wheel pandas
+RUN pip3 install elasticsearch urllib3==1.24.1 jsonschema==2.6.0 wheel pandas
 
 ENV JAVA_HOME /usr/lib/jvm/java-6-openjdk-amd64
 RUN (cd /tmp && \
