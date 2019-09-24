@@ -2,14 +2,11 @@ FROM debian:jessie
 
 COPY ./script /script
 
-RUN apt-get update && \
-    apt-get install -y openjdk-7-jre wget
-RUN apt-get install -y --no-install-recommends \
-    python3.5 \
-    python3-pip \
-    && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update
+RUN apt-get install python3.6
+RUN apt-get install -y openjdk-7-jre wget
+RUN apt-get install -y python3-pip 
 
 RUN pip3 install elasticsearch urllib3==1.24.1 jsonschema==2.6.0 wheel pandas
 
