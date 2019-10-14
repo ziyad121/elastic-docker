@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 #some_ important _library
 RUN apt-get update && apt-get install wget build-essential gcc make -y
