@@ -11,8 +11,6 @@ RUN apt-get update && \
 
 RUN pip3 install --upgrade pip requests elasticsearch urllib3==1.24.1 jsonschema==2.6.0 wheel pandas
 
-ADD supervisord.conf /etc/supervisor/supervisord.conf
-
 
 
 
