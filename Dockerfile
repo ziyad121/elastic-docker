@@ -48,3 +48,5 @@ HEALTHCHECK --retries=10 CMD curl -s -XGET 'http://127.0.0.1:9200/_cat/health'
 USER elasticsearch:elasticsearch
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 CMD ["/usr/share/elasticsearch/bin/elasticsearch"]
+
+WORKDIR ./
