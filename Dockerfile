@@ -17,12 +17,13 @@ RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.
 RUN shasum -a 512 -c elasticsearch-7.4.0-linux-x86_64.tar.gz.sha512 
 RUN tar -xzf elasticsearch-7.4.0-linux-x86_64.tar.gz
 
-RUN rm elasticsearch-7.4.0-linux-x86_64.tar.gz
-RUN chown -R elastic:es elasticsearch-7.4.0
+
 
 RUN addgroup es
 RUN adduser elastic
 RUN adduser elastic es
+RUN rm elasticsearch-7.4.0-linux-x86_64.tar.gz
+RUN chown -R elastic:es elasticsearch-7.4.0
 USER elastic
 
 # Define default command.
