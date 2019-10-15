@@ -10,3 +10,4 @@ search_results = es.search(index = 'elasticsearch_demo',
                                       } 
                             })
 
+print(search_results)
