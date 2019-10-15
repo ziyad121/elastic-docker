@@ -12,8 +12,8 @@ RUN apt-get update && \
 RUN pip3 install --upgrade pip requests 
 RUN pip3 install elasticsearch urllib3==1.24.1 jsonschema==2.6.0 wheel pandas
 #ELASTICSEARCH
-RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch 
-RUN sudo apt-key add GPG-KEY-elasticsearch
+RUN sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch 
+RUN sudo apt-key add GPG-KEY-elasticsearch -
 RUN apt-get install apt-transport-https
 RUN "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list
 RUN apt-get update && sudo apt-get install elasticsearch
