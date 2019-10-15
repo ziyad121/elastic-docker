@@ -2,10 +2,12 @@ from elasticsearch import Elasticsearch
 import sys
 
 es= Elasticsearch()
-q = sys.argv[1]
+
+q= sys.argv[1]
+
 search_results = es.search(index = 'elasticsearch_demo', body = {"_source":"name",'query':{'match_phrase':{"content": q}}})
 
-print("%d documents found" % res['hits']['total'])
+
 for doc in search_results['hits']['hits']:
-    print("%s) %s" % (doc['_id'], doc['_source']['content']))
-print(search_results)
+    print(" %s" %doc['_source']['name'])
+
