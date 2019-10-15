@@ -17,8 +17,8 @@ RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.
 RUN shasum -a 512 -c elasticsearch-7.4.0-linux-x86_64.tar.gz.sha512 
 RUN tar -xzf elasticsearch-7.4.0-linux-x86_64.tar.gz
 
-RUN sudo chown -R elastic:elastic elasticsearch-7.4.0
-RUN su elastic 
+RUN chown -R elastic:elastic elasticsearch-7.4.0
+USER elastic 
 
 # Define default command.
 CMD ["/elasticsearch-7.4.0/bin/elasticsearch"]
