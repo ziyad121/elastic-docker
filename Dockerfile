@@ -4,10 +4,6 @@ COPY ./script /script
 # Setup python and java and base system
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG=en_US.UTF-8
-RUN addgroup es
-RUN adduser elastic
-RUN adduser elastic es
-USER elastic
 
 RUN apt-get update && \
   apt-get upgrade -y && \
@@ -23,18 +19,18 @@ RUN tar -xzf elasticsearch-7.4.0-linux-x86_64.tar.gz
 
 RUN rm elasticsearch-7.4.0-linux-x86_64.tar.gz
 RUN chown -R elastic:es elasticsearch-7.4.0
+
+RUN addgroup es
+RUN adduser elastic
+RUN adduser elastic es
 USER elastic
 
-
-
+# Define default command.
+CMD ["/elasticsearch-7.4.0/bin/elasticsearch"]
 
 # Expose ports.
 #   - 9200: HTTP
 #   - 9300: transport
 EXPOSE 9200
 EXPOSE 9300 
-
-# Define default command.
-CMD ["/elasticsearch-7.4.0/bin/elasticsearch"]
-
 
