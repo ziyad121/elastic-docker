@@ -17,14 +17,19 @@ RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.
 RUN shasum -a 512 -c elasticsearch-7.4.0-linux-x86_64.tar.gz.sha512 
 RUN tar -xzf elasticsearch-7.4.0-linux-x86_64.tar.gz
 
-RUN chown -R elastic:elastic elasticsearch-7.4.0
-USER elastic 
+RUN addgroup -S es
+RUN adduser -S -D -h elastic es
 
-# Define default command.
-CMD ["/elasticsearch-7.4.0/bin/elasticsearch"]
+RUN chown -R elastic:es elasticsearch-7.4.0
+USER elastic 
 
 # Expose ports.
 #   - 9200: HTTP
 #   - 9300: transport
 EXPOSE 9200
-EXPOSE 9300
+EXPOSE 9300 
+
+# Define default command.
+CMD ["/elasticsearch-7.4.0/bin/elasticsearch"]
+
+
