@@ -18,7 +18,7 @@ RUN shasum -a 512 -c elasticsearch-7.4.0-linux-x86_64.tar.gz.sha512
 RUN tar -xzf elasticsearch-7.4.0-linux-x86_64.tar.gz
 
 RUN addgroup -S es
-RUN adduser -S -D -h elastic es
+RUN adduser elastic es
 
 RUN chown -R elastic:es elasticsearch-7.4.0
 USER elastic 
