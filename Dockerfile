@@ -19,7 +19,7 @@ RUN tar -xzf elasticsearch-7.4.0-linux-x86_64.tar.gz
 
 
 # Define default command.
-CMD [ "/elasticsearch-7.4.0/bin/elasticsearch" -Des.insecure.allow.root=true -d]
+CMD "/elasticsearch-7.4.0/bin/elasticsearch" -Des.insecure.allow.root=true -d
 
 # Expose ports.
 #   - 9200: HTTP
