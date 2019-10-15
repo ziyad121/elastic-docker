@@ -23,7 +23,7 @@ df = extract_txt_files(files)
 
 
 # Create Index 
-es = Elasticsearch()
+es = Elasticsearch(['http://'+os.environ['193.175.238.15'] +':'+ os.environ['9200']],timeout=600)
 col_names = df.columns 
 for row_number in range(df.shape[0]):
     body = dict([(name, str(df.iloc[row_number][name])) for name in col_names])
