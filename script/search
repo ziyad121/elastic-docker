@@ -1,6 +1,6 @@
 from elasticsearch import Elasticsearch 
 import json
-
+import sys 
 es= Elasticsearch()
 q= sys.argv[1]
 
