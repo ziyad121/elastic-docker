@@ -29,3 +29,5 @@ for row_number in range(df.shape[0]):
     body = dict([(name, str(df.iloc[row_number][name])) for name in col_names])
     #passing the body as index to elasticsearch
     es.index(index = 'elasticsearch_demo', doc_type = 'sample', body = body)
+    
+print("...done indexing :-)")
