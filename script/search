@@ -10,7 +10,8 @@ search_results = es.search(index = 'elasticsearch_demo', body = {"_source":"name
 l = []
 
 for doc in search_results['hits']['hits']:
-    l.append(doc['_source']['name'])
+      if doc['_source']['name'] not in l:
+        l.append(doc['_source']['name'])
 
 d = { i : l[i] for i in range(0, len(l) ) }
 print(json.dumps(d))
